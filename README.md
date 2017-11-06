@@ -16,7 +16,7 @@ For Cordova projects I put it in
       
 and modified
 
-      /platforms/android/cordova-plugin-crosswalk-webview/hellocordova-xwalk.gradle:
+      /platforms/android/cordova-plugin-crosswalk-webview/hellocordova-xwalk.gradle
 
 repositories {
       //maven {
