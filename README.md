@@ -8,7 +8,7 @@ https://crosswalk-project.org/contribute/building_crosswalk/android_build.html
 
 ## Apply code changes from this repo to crosswalk src.
 
-## Build and include the resulting xwalk_core_library.aar in your project instead of the 
+## Build and include the resulting xwalk_core_library.aar in your project instead of the maven repository
 
 For Cordova projects I put it in
 
@@ -17,7 +17,7 @@ For Cordova projects I put it in
 and modified
 
       /platforms/android/cordova-plugin-crosswalk-webview/hellocordova-xwalk.gradle
-
+```
 repositories {
       //maven {
         //url xwalkMavenRepo
@@ -33,3 +33,4 @@ dependencies {
         //compile xwalkSpec
         compile(name:'xwalk_core_library', ext:'aar')
     }
+```
