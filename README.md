@@ -1,2 +1,29 @@
-# crosswalk_core_library_noaudiofocus
-How to modify and build crosswalk core library with RequestAudioFocus removed so your app can handle that itself.
+#Set up chromium depot tools:
+http://commondatastorage.googleapis.com/chrome-infra-docs/flat/depot_tools/docs/html/depot_tools_tutorial.html#_setting_up
+git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
+export PATH=$PATH:/path/to/depot_tools
+
+#Then follow these instructions to get and build crosswalk for android:
+https://crosswalk-project.org/contribute/building_crosswalk/android_build.html
+
+#Apply code changes from this repo to crosswalk src.
+
+#Build and include the resulting xwalk_core_library.aar in your project instead of the 
+
+For Cordova projects I put it in /platforms/android/libs/ and modify /platforms/android/cordova-plugin-crosswalk-webview/hellocordova-xwalk.gradle:
+
+repositories {
+      //maven {
+        //url xwalkMavenRepo
+      //}
+        flatDir { 
+         dirs '/libs'
+        }
+    }
+    
+...
+
+dependencies {
+        //compile xwalkSpec
+        compile(name:'xwalk_core_library', ext:'aar')
+    }
